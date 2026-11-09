@@ -135,7 +135,7 @@ nav span a[aria-current]{color:var(--ink)}
 </style>
 </head>
 <body>
-<nav><div><a class="logo" href="/" aria-label="iCita, inicio"><img src="/logo.png" alt="iCita" width="82" height="30"></a><span><a href="/">Home</a><a href="/producto" aria-current="page">Producto</a><a href="/como-funciona">Cómo funciona</a><a href="/por-que-icita">Por qué iCita</a><a href="/precios">Precios</a><a href="/preguntas">Preguntas</a><a class="btn" href="/precios">Contratar</a></span></div></nav>
+<nav><div><a class="logo" href="/" aria-label="iCita, inicio"><img src="/logo.svg" alt="iCita" width="82" height="30"></a><span><a href="/">Home</a><a href="/producto" aria-current="page">Producto</a><a href="/como-funciona">Cómo funciona</a><a href="/por-que-icita">Por qué iCita</a><a href="/precios">Precios</a><a href="/preguntas">Preguntas</a><a class="btn" href="/precios">Contratar</a></span></div></nav>
 <section id="producto">
   <div class="wrap">
     <h1 class="pt">Todo el ciclo de la cita, en un solo lugar.</h1>
@@ -170,7 +170,7 @@ nav span a[aria-current]{color:var(--ink)}
     </div>
   </div>
 </section><section class="cta alt"><div class="wrap"><h2>Elige el plan para tu negocio.</h2><p class="sub">Lo configuramos por ti, con tus horarios y tu logo.</p><div class="contact"><a class="btn" href="/precios">Ver precios</a><a class="btn o" target="_blank" rel="noopener" href="https://wa.me/525515051231?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20iCita">Hablar por WhatsApp</a></div></div></section>
-<footer><div class="fcols"><div><a class="logo" href="/" aria-label="iCita, inicio" style="margin-bottom:10px"><img src="/logo.png" alt="iCita"></a><div>Una vez que entras, ya no pierdes citas.</div></div>
+<footer><div class="fcols"><div><a class="logo" href="/" aria-label="iCita, inicio" style="margin-bottom:10px"><img src="/logo.svg" alt="iCita"></a><div>Una vez que entras, ya no pierdes citas.</div></div>
 <div><h4>Producto</h4><a href="/producto">Producto</a><a href="/como-funciona">Cómo funciona</a><a href="/precios">Precios</a></div>
 <div><h4>Empresa</h4><a href="/por-que-icita">Por qué iCita</a><a href="/ideal-para">Ideal para</a><a href="/preguntas">Preguntas frecuentes</a><a href="/contacto">Contacto</a></div>
 <div><h4>Legal</h4><a href="/aviso-de-privacidad">Aviso de privacidad</a><a href="/terminos-y-condiciones">Términos y condiciones</a><a href="mailto:soporte@icita.mx">soporte@icita.mx</a></div></div>
@@ -178,7 +178,7 @@ nav span a[aria-current]{color:var(--ink)}
 <script>
 (function(){
 /* ====== ENLACES DE STRIPE: pega aquí tu Payment Link de cada plan ====== */
-var STRIPE={1:["","","",""],2:["","","",""]};
+var STRIPE={1:["https://buy.stripe.com/4gM3cv6bq7zDaHc6Sa63K00","https://buy.stripe.com/3cI00jfM007b5mSb8q63K01","https://buy.stripe.com/4gM4gz1Va3jnbLgfoG63K02","https://buy.stripe.com/5kQ8wPczO07b8z490i63K03"],2:["","","",""]};
 /* Orden: Start, Core, Advance, Elite. Si un enlace está vacío, el botón abre un correo. */
 var P=[{n:"Start",c:120,a:1,m:[499,848],s:[499,649]},{n:"Core",c:250,a:2,m:[699,1048],s:[599,799]},{n:"Advance",c:400,a:3,m:[999,1348],s:[799,999]},{n:"Elite",c:600,a:5,m:[1399,1748],s:[999,1249]}];
 var fm=function(n){return "$"+n.toLocaleString("es-MX")};

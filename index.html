@@ -281,10 +281,11 @@ var P=[{n:"Start",c:120,a:1,m:[499,848],s:[499,649]},{n:"Core",c:250,a:2,m:[699,
 var fm=function(n){return "$"+n.toLocaleString("es-MX")};
 function plans(f){var i=f-1,h="";
 P.forEach(function(p,k){
-var l=STRIPE[f][k]||("mailto:soporte@icita.mx?subject="+encodeURIComponent("Quiero contratar iCita "+p.n)),ext=STRIPE[f][k]?' target="_blank" rel="noopener"':"";
-h+='<div class="plan"><h3>iCita '+p.n+'</h3><div class="pr">'+fm(p.m[i])+' <small>/ mes</small></div><div class="iva">IVA incluido</div><ul><li><b>Hasta '+p.c+'</b> citas al mes</li><li><b>'+p.a+'</b> '+(p.a>1?"agendas incluidas":"agenda incluida")+'</li><li>Setup único: <b>'+fm(p.s[i])+'</b></li><li>Pago inicial: <b>'+fm(p.m[i]+p.s[i])+'</b></li></ul><a class="btn" href="'+l+'"'+ext+'>Contratar</a></div>';});
+var l=STRIPE[f][k]||("mailto:soporte@icita.mx?subject="+encodeURIComponent("Quiero contratar iCita "+p.n)),ext=STRIPE[f][k]?' target="_blank" rel="noopener"':"",bt="Contratar";
+if(f==2){l="https://wa.me/525515051231?text="+encodeURIComponent("Hola, quiero que me avisen cuando esté disponible iCita "+p.n+" con mi propio número de WhatsApp.");ext=' target="_blank" rel="noopener"';bt="Próximamente";}
+h+='<div class="plan"><h3>iCita '+p.n+'</h3><div class="pr">'+fm(p.m[i])+' <small>/ mes</small></div><div class="iva">IVA incluido</div><ul><li><b>Hasta '+p.c+'</b> citas al mes</li><li><b>'+p.a+'</b> '+(p.a>1?"agendas incluidas":"agenda incluida")+'</li><li>Setup único: <b>'+fm(p.s[i])+'</b></li><li>Pago inicial: <b>'+fm(p.m[i]+p.s[i])+'</b></li></ul><a class="btn" href="'+l+'"'+ext+'>'+bt+'</a></div>';});
 document.getElementById("plans").innerHTML=h;
-document.getElementById("ffine").textContent=f==1?"Los mensajes salen del WhatsApp Empresarial de iCita, con el nombre de tu negocio.":"Incluye $349 al mes extra por usar tu propio número de WhatsApp Empresarial. Sujeto a disponibilidad y aprobación de Meta; mientras tanto operas con el número de iCita sin ese cargo.";}
+var ff=document.getElementById("ffine");ff.textContent=f==1?"Los mensajes salen del WhatsApp Empresarial de iCita, con el nombre de tu negocio.":"";ff.style.display=f==1?"":"none";}
 var sg=document.querySelectorAll(".seg button");
 sg.forEach(function(b){b.addEventListener("click",function(){sg.forEach(function(x){x.setAttribute("aria-pressed",x===b)});plans(+b.dataset.f)})});
 if(document.getElementById("plans"))plans(1);
